@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SmartFoxWorkToolsProjectState">
+    <option name="branch" value="master" />
+    <option name="gitUrl" value="https://github.com/zzyyhh/test1.git" />
     <option name="localBranch" value="master" />
+    <option name="revision" value="551e5988408b40f96f81ed55df5c0308b1f50b10" />
   </component>
 </project>

@@ -1,0 +1,21 @@
+!.gitignore
+
+# filter eclipse file
+.classpath
+.project
+
+# filter eclipse dir
+.settings/
+
+# filter idea file
+*.iml
+
+#filter idea dir
+/.idea/
+
+#filter compile dir
+bin/
+target/
+
+#filter os file
+.DS_Store
