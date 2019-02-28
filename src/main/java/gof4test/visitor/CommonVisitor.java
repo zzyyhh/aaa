@@ -6,7 +6,7 @@ import java.util.List;
 import com.google.common.collect.Lists;
 
 /**
- * @author yinghui.zhang on 2017/10/23
+ * @author aaa on 2017/10/23
  */
 public class CommonVisitor {
     interface Visitor<T> {
