@@ -1,6 +1,5 @@
-package gof4test.visitor;
+package com.zyh.code.visitor;
 
-import java.util.Arrays;
 import java.util.List;
 
 import com.google.common.collect.Lists;
