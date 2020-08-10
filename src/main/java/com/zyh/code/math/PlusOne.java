@@ -1,5 +1,7 @@
 package com.zyh.code.math;
 
+import java.util.Arrays;
+
 /**
  * @author yinghui.zhang on 2020/8/4
  */
@@ -21,8 +23,22 @@ public class PlusOne {
         //Input: [4,3,2,1]
         //Output: [4,3,2,2]
         //Explanation: The array represents the integer 4321.
+        //https://leetcode-cn.com/problems/plus-one/?utm_source=LCUS&utm_medium=ip_redirect_q_uns&utm_campaign=transfer2china
 
+        int[] result = plusOne(new int[]{9,9});
+        System.out.println(Arrays.toString(result));
+    }
 
-
+    private static int[] plusOne(int[] digits) {
+        for (int i = digits.length - 1; i >=0 ; i--) {
+            if (digits[i] < 9) {
+                digits[i]++;
+                return digits;
+            }
+            digits[i] = 0;
+        }
+        int[] result = new int[digits.length+1];
+        result[0] = 1;
+        return result;
     }
 }
