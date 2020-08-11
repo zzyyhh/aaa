@@ -1,6 +1,7 @@
 package com.zyh.code.dfs;
 
-import com.zyh.code.tree.Support;
+import com.zyh.code.support.Support;
+import com.zyh.code.support.TreeNode;
 
 /**
  * @author zhangyinghui  Date: 2020/8/10 Time: 9:46 PM
@@ -22,13 +23,13 @@ public class BalancedBinaryTree {
      */
     //解法,深度优先搜索,左子树,右子树高度差距不超过1
     public static void main(String[] args) {
-        Support.TreeNode root = Support.buildTree();
+        TreeNode root = Support.buildTree();
         boolean result = isBalancedBinaryTree(root);
         System.out.println(result);
 
     }
 
-    private static boolean isBalancedBinaryTree(Support.TreeNode root) {
+    private static boolean isBalancedBinaryTree(TreeNode root) {
         if (root == null) {
             return true;
         }
@@ -37,7 +38,7 @@ public class BalancedBinaryTree {
         return Math.abs(depthLeft-depthRight) <= 1;
     }
 
-    private static int high(Support.TreeNode treeNode) {
+    private static int high(TreeNode treeNode) {
         if (treeNode == null) {
             return 0;
         }
@@ -55,12 +56,12 @@ public class BalancedBinaryTree {
     public static class BalancedBinaryTree0 {
         boolean balanced = true;
 
-        public boolean isBalanced(Support.TreeNode root) {
+        public boolean isBalanced(TreeNode root) {
             height(root);
             return balanced;
         }
 
-        private int height(Support.TreeNode root) {
+        private int height(TreeNode root) {
             if(root == null) {
                 return 0;
             }

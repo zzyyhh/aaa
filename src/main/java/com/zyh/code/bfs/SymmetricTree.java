@@ -1,6 +1,7 @@
 package com.zyh.code.bfs;
 
-import com.zyh.code.tree.Support;
+import com.zyh.code.support.Support;
+import com.zyh.code.support.TreeNode;
 
 /**
  * @author zhangyinghui  Date: 2020/8/10 Time: 9:12 PM
@@ -33,19 +34,19 @@ public class SymmetricTree {
      */
     //解法: 广度优先搜索
     public static void main(String[] args) {
-        Support.TreeNode root = Support.buildTree();
+        TreeNode root = Support.buildTree();
         boolean result = isSymmetricTree(root);
         System.out.println(result);
     }
 
-    private static boolean isSymmetricTree(Support.TreeNode root) {
+    private static boolean isSymmetricTree(TreeNode root) {
         if (root == null) {
             return true;
         }
         return isSymmetricTree0(root.getLeft(), root.getRight());
     }
 
-    private static boolean isSymmetricTree0(Support.TreeNode left, Support.TreeNode right) {
+    private static boolean isSymmetricTree0(TreeNode left, TreeNode right) {
         if (left == null && right == null) {
             return true;
         }

@@ -1,6 +1,7 @@
 package com.zyh.code.tree;
 
-import com.zyh.code.tree.Support.TreeNode;
+import com.zyh.code.support.Support;
+import com.zyh.code.support.TreeNode;
 
 /**
  * @author yinghui.zhang on 2020/8/3

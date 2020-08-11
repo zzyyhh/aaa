@@ -1,8 +1,8 @@
 package com.zyh.code.tree;
 
-import com.zyh.code.tree.Support.TreeNode;
+import com.zyh.code.support.TreeNode;
 
-import static com.zyh.code.tree.Support.buildTree;
+import static com.zyh.code.support.Support.buildTree;
 
 /**
  *

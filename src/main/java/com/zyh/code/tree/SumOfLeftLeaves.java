@@ -1,11 +1,10 @@
 package com.zyh.code.tree;
 
-import java.util.List;
-import java.util.function.ToIntFunction;
-import java.util.stream.Collectors;
-
 import com.google.common.collect.Lists;
-import com.zyh.code.tree.Support.TreeNode;
+import com.zyh.code.support.Support;
+import com.zyh.code.support.TreeNode;
+
+import java.util.List;
 
 /**
  * @author yinghui.zhang on 2020/8/3
