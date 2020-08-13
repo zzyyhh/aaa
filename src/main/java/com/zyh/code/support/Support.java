@@ -26,6 +26,13 @@ public class Support {
         return root;
     }
 
+
+    public static ListNode buildListNode1() {
+//        head = [3,2,0,-4]
+        ListNode head = new ListNode(3, new ListNode(2,  new ListNode(0, new ListNode(-4, null))));
+        return head;
+    }
+
     public static ListNode buildListNode() {
 //        head = [3,2,0,-4], pos = 1
         ListNode head = new ListNode(3, new ListNode(2,  new ListNode(0, new ListNode())));

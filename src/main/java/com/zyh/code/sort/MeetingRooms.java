@@ -25,7 +25,7 @@ public class MeetingRooms {
      */
     //解法，a. 排序，b. 找出重叠
     public static void main(String[] args) {
-        Interval[] intervals = new Interval[]{new Interval(0,30),new Interval(5,10),new Interval(15,20)};
+        Interval[] intervals = new Interval[]{new Interval(0, 30),new Interval(5, 10),new Interval(15, 20)};
         boolean result = canMeeting(intervals);
         System.out.println(result);
     }
