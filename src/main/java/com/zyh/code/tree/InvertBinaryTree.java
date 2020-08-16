@@ -34,7 +34,22 @@ public class InvertBinaryTree {
         //2
         TreeNode result = invertBinaryTree2(root);
         System.out.println(result);
+
+
+
     }
+
+    private static void invertBinaryTree3(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        TreeNode leftTemp = root.left;
+        root.left = root.right;
+        root.right = leftTemp;
+        invertBinaryTree3(root.left);
+        invertBinaryTree3(root.right);
+    }
+
 
 
     private static void invertBinaryTree(TreeNode root) {

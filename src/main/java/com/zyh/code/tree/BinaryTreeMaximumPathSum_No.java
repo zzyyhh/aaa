@@ -23,18 +23,43 @@ public class BinaryTreeMaximumPathSum_No {
     // from : https://leetcode-cn.com/problems/binary-tree-maximum-path-sum/
     // 解法：https://leetcode-cn.com/problems/binary-tree-maximum-path-sum/solution/shou-hui-tu-jie-hen-you-ya-de-yi-dao-dfsti-by-hyj8/
     // dfs
+
+    private static void main0() {
+        //find the left max + right max
+        int maxC = findMax0(Support.buildTree());
+        System.out.println(maxC);
+    }
+
+    private static int findMax0(TreeNode treeNode) {
+        if (treeNode == null) {
+            return 0;
+        }
+        // find left max
+        int left = Math.max(findMax0(treeNode.left),0);
+        // find right max
+        int right = Math.max(findMax0(treeNode.right),0);
+        // then the max is value + left + right => max
+        max = Math.max(max, treeNode.value + left + right);
+        // return the value  + max(left,right)
+        return treeNode.value + Math.max(left, right);
+    }
+
+
     static int max = Integer.MIN_VALUE;
 
     public static void main(String[] args) {
         int result = findMax(Support.buildTree());
         System.out.println(result);
+
+        main0();
     }
+
 
     private static int findMax(TreeNode treeNode) {
         if (treeNode == null) {
             return 0;
         }
-        int left = Math.max(findMax(treeNode.left),0);
+        int left = Math.max(findMax(treeNode.left), 0);
         int right = Math.max(findMax(treeNode.right), 0);
         max = Math.max(max, treeNode.value + left+ right);
         return treeNode.value + Math.max(left, right);

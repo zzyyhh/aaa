@@ -31,6 +31,18 @@ public class SumOfLeftLeaves {
         System.out.println(result);
     }
 
+
+    private static void sumOfLeft0(List<Integer> sum , TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        if (root.left != null) {
+            sum.add(root.left.value);
+        }
+        sumOfLeft0(sum, root.left);
+        sumOfLeft0(sum, root.right);
+    }
+
     private static int sumOfLeftLeaves(TreeNode treeNode) {
         List<Integer> integers = Lists.newArrayList();
         if (treeNode == null) {
