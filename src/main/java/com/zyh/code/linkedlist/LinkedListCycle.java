@@ -29,11 +29,16 @@ public class LinkedListCycle {
      */
 
 //141 判断链表是否有环    https://leetcode-cn.com/problems/linked-list-cycle/
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         ListNode head = Support.buildListNode();
         System.out.println(head);
         boolean result = isCycle(head);
         System.out.println(result);
+
+//        CountDownLatch countDownLatch = new CountDownLatch(1);
+//        //异步执行
+//        async(run, countDownLatch);
+//        countDownLatch.await(1, TimeUnit.MILLISECONDS);
     }
 
     private static boolean isCycle(ListNode head) {
