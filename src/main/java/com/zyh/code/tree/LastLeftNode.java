@@ -1,7 +1,13 @@
 package com.zyh.code.tree;
 
+import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 import com.zyh.code.support.Support;
 import com.zyh.code.support.TreeNode;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Queue;
 
 /**
  * @author yinghui.zhang on 2020/8/20
@@ -19,17 +25,46 @@ public class LastLeftNode {
 
     public static void main(String[] args) {
         TreeNode treeNode = Support.buildTree1();
-        TreeNode result = findLastLevelLeftNode(treeNode);
+        Integer result = findLastLevelLeftNode(treeNode);
+        System.out.println(result);
     }
-    //解法1. 按层遍历
-    //解法2.
-    private static TreeNode findLastLevelLeftNode(TreeNode treeNode) {
+
+
+    //解法1. 按层遍历,
+
+    private static Integer findLastLevelLeftNode(TreeNode treeNode) {
         if (treeNode == null) {
             return null;
         }
-        TreeNode left = treeNode.left;
-        TreeNode right = treeNode.right;
+        Map<Integer, List<Integer>> level2Nodes = Maps.newHashMap();
+        int level = 0;
+        Queue<TreeNode> queue = Lists.newLinkedList();
+        queue.add(treeNode);
 
-        return null;
+        List<Integer> leftList = Lists.newArrayList();
+
+        while (queue.size() > 0) {
+            level++;
+            int size = queue.size();
+            List<Integer> temp = Lists.newArrayList();
+
+            for (int i = 0; i < size; i++) {
+                TreeNode node = queue.poll();
+                temp.add(node.getValue());
+
+                if (node.left != null) {
+                    queue.add(node.left);
+                    leftList.add(node.left.value);
+                }
+                if (node.right != null) {
+                    queue.add(node.right);
+                }
+            }
+
+            level2Nodes.put(level, temp);
+        }
+
+
+        return leftList.get(leftList.size()-1);
     }
 }

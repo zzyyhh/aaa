@@ -34,11 +34,6 @@ public class LinkedListCycle {
         System.out.println(head);
         boolean result = isCycle(head);
         System.out.println(result);
-
-//        CountDownLatch countDownLatch = new CountDownLatch(1);
-//        //异步执行
-//        async(run, countDownLatch);
-//        countDownLatch.await(1, TimeUnit.MILLISECONDS);
     }
 
     private static boolean isCycle(ListNode head) {
