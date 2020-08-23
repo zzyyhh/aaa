@@ -58,7 +58,7 @@ public class PlusOneLinkedList {
         }
 
         if (addOne) {
-            current = new ListNode(1,null);
+            current = new ListNode(1, null);
             current.next = head;
         }
 
