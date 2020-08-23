@@ -9,13 +9,17 @@ import com.zyh.code.support.ListNode;
 public class MergeList {
 
     public static void main(String[] args) {
-//        ListNode list1 = buildListNode1();
-        ListNode list1 = null;
+        ListNode list1 = buildListNode1();
         ListNode list2 = buildListNode2();
 
         ListNode result = mergeList1(list1, list2);
+        ListNode result1 = mergeList2(list1, list2);
 
-        System.out.println(result);
+        System.out.println(result1);
+    }
+
+    private static ListNode mergeList2(ListNode list1, ListNode list2) {
+        return null;
     }
 
 
@@ -41,7 +45,7 @@ public class MergeList {
             return list1;
         }
 
-        ListNode head = new ListNode(Integer.MIN_VALUE, null);
+        ListNode head = new ListNode();
         head.next = list1;
 
         ListNode pre = head;
