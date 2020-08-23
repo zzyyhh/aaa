@@ -79,5 +79,4 @@ public class MergeKSortedLists {
 
         return dummy.next;
      }
-
 }

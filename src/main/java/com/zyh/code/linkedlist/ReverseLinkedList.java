@@ -45,4 +45,47 @@ public class ReverseLinkedList {
 
         return result;
     }
+
+    private static ListNode reverseList2(ListNode head) {
+        if (head == null) {
+            return head;
+        }
+        ListNode result = new ListNode();
+        while (head != null) {
+
+            ListNode next = head.next;
+
+            head.next = result;
+
+            result = head;
+
+            head = next;
+
+        }
+
+        return result;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
