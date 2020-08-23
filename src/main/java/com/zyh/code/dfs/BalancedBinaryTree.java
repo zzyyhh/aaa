@@ -23,7 +23,7 @@ public class BalancedBinaryTree {
      */
     //解法,深度优先搜索,左子树,右子树高度差距不超过1
     public static void main(String[] args) {
-        TreeNode root = Support.buildTree();
+        TreeNode root = Support.buildTree1();
         boolean result = isBalancedBinaryTree(root);
         System.out.println(result);
 
@@ -33,8 +33,10 @@ public class BalancedBinaryTree {
         if (root == null) {
             return true;
         }
-        int depthLeft = high(root.getLeft());
-        int depthRight = high(root.getRight());
+        int depthLeft = high(root.getLeft()) +1;
+        System.out.println("leftHigh= " + depthLeft);
+        int depthRight = high(root.getRight())+1;
+        System.out.println("depthRight= " + depthRight);
         return Math.abs(depthLeft-depthRight) <= 1;
     }
 
@@ -42,11 +44,9 @@ public class BalancedBinaryTree {
         if (treeNode == null) {
             return 0;
         }
-        if (treeNode.getLeft() != null || treeNode.getRight() != null) {
-            return 1;
-        }
-        int leftHigh = high(treeNode.getLeft());
-        int rightHigh = high(treeNode.getRight());
+
+        int leftHigh = high(treeNode.getLeft()) + 1;
+        int rightHigh = high(treeNode.getRight()) +1;
         if (leftHigh > rightHigh) {
             return leftHigh;
         }
