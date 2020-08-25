@@ -45,7 +45,7 @@ public class BinarySearchTreeIterator {
             }
         }
         public boolean hasNext() {
-            return stack.isEmpty() ? false : true;
+            return !stack.isEmpty();
         }
         public int next() {
             TreeNode nextSmallest = stack.pollLast();
