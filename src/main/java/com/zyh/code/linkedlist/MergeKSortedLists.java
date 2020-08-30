@@ -2,6 +2,7 @@ package com.zyh.code.linkedlist;
 
 import com.zyh.code.support.ListNode;
 
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
@@ -15,7 +16,7 @@ public class MergeKSortedLists {
     public static void main(String[] args) {
         ListNode list1 = buildListNode1();
         ListNode list2 = buildListNode2();
-        ListNode[] listNodes = new ListNode[]{list1,list2};
+        ListNode[] listNodes = new ListNode[]{list1, list2};
         ListNode result = mergeKLists(listNodes);
         ListNode ss = mergeList(list1, list2);
         System.out.println(ss);
@@ -50,7 +51,7 @@ public class MergeKSortedLists {
     }
 
     private static ListNode mergeKLists(ListNode[] listNodes) {
-        if (listNodes==null || listNodes.length ==0){
+        if (listNodes == null || listNodes.length == 0) {
             return null;
         }
         PriorityQueue<ListNode> queue = new PriorityQueue<>(listNodes.length, new Comparator<ListNode>() {
@@ -72,11 +73,36 @@ public class MergeKSortedLists {
             tail.next = queue.poll();
             tail = tail.next;
 
-            if (tail.next!=null) {
+            if (tail.next != null) {
                 queue.add(tail.next);
             }
         }
 
         return dummy.next;
-     }
+    }
+
+
+    private static ListNode mergeKLists2(ListNode[] listNodes) {
+        if (listNodes == null || listNodes.length == 0) {
+            return null;
+        }
+        PriorityQueue<ListNode> queue = new PriorityQueue<>(listNodes.length, new Comparator<ListNode>() {
+            @Override
+            public int compare(ListNode o1, ListNode o2) {
+                return Integer.compare(o1.getValue(), o2.getValue());
+            }
+        });
+        Collections.addAll(queue, listNodes);
+        ListNode head = new ListNode();
+        ListNode tail = head;
+        while (!queue.isEmpty()) {
+            tail.next = queue.poll();
+            tail = tail.next;
+
+            if (tail.next != null) {
+                queue.add(tail.next);
+            }
+        }
+        return head.next;
+    }
 }

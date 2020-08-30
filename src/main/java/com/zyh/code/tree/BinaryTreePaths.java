@@ -40,10 +40,10 @@ public class BinaryTreePaths {
             result.add(current+treeNode.value);
         }
         if (treeNode.left != null) {
-            path0(current+treeNode.value+"->", result, treeNode.left);
+            path0(current+treeNode.value +"->", result, treeNode.left);
         }
         if (treeNode.right != null) {
-            path0(current+treeNode.value+"->", result, treeNode.right);
+            path0(current+treeNode.value+"->",result,treeNode.right);
         }
     }
 
@@ -65,10 +65,8 @@ public class BinaryTreePaths {
 
         List<String> result = binaryTreePaths(Support.buildTree());
         System.out.println(result);
-
         main0();
     }
-
 
     private static List<String> binaryTreePaths(TreeNode treeNode) {
 

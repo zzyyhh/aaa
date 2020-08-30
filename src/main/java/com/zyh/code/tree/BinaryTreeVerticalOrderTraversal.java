@@ -1,4 +1,4 @@
-package com.zyh.code.hash;
+package com.zyh.code.tree;
 
 import com.google.common.collect.Lists;
 import com.zyh.code.support.Support;

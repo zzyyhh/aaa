@@ -5,6 +5,8 @@ import com.zyh.code.support.ListNode;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
+import static com.zyh.code.support.Support.buildListNode1;
+
 /**
  * @author zhangyinghui  Date: 2020/8/23 Time: 11:17 AM
  */
@@ -32,6 +34,9 @@ public class PlusOneLinkedList {
      * }
      */
     public static void main(String[] args) {
+        ListNode list1 = buildListNode1();
+        plusOneRecursive1(list1);
+        System.out.println(list1);
 
     }
 
@@ -64,6 +69,21 @@ public class PlusOneLinkedList {
 
         return current;
     }
+
+    private static ListNode plusOneRecursive1(ListNode head) {
+        ListNode lastNode = head;
+        while (lastNode.next != null) {
+            lastNode = lastNode.next;
+        }
+        if (lastNode.value == 9) {
+            lastNode.value = 0;
+            lastNode.next = new ListNode(1,null);
+        } else {
+            lastNode.value = lastNode.value+1;
+        }
+        return head;
+    }
+
 
 
 }

@@ -50,7 +50,6 @@ public class BinaryTreeMaximumPathSum_No {
     public static void main(String[] args) {
         int result = findMax(Support.buildTree());
         System.out.println(result);
-
         main0();
     }
 
