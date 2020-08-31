@@ -1,7 +1,6 @@
 package com.zyh.kafka;
 
 import info.batey.kafka.unit.KafkaUnit;
-import org.apache.kafka.clients.producer.ProducerRecord;
 
 /**
  * @author zhangyinghui  Date: 2020/8/23 Time: 9:26 PM
@@ -16,9 +15,6 @@ public class KafkaUnitTest {
 
             //create topic
             kafkaUnitServer.createTopic("zyh-test");
-
-            //send msg
-            kafkaUnitServer.sendMessages(new ProducerRecord<String, String>("zyh-test", "aaa"));
 
             //
 

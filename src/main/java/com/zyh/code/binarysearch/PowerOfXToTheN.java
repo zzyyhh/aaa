@@ -30,4 +30,24 @@ public class PowerOfXToTheN {
             return x * pow(x*x, n/2);
         }
     }
+    private static double pow1(double x, int n) {
+       //x的n次方
+        if (n == 0) {
+            return 1;
+        }
+        if (Double.isInfinite(x)) {
+            return 0;
+        }
+        if (n < 0) {
+            n = -n;
+            x = 1/x;
+        }
+
+        if(n%2==0){
+            return pow(x*x, n/2);
+        } else {
+            return x * pow(x*x, n/2);
+        }
+
+    }
 }
