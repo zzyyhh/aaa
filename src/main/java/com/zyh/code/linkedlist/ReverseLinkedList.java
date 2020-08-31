@@ -48,21 +48,23 @@ public class ReverseLinkedList {
 
     private static ListNode reverseList2(ListNode head) {
         if (head == null) {
-            return head;
+            return null;
         }
-        ListNode result = new ListNode();
-        while (head != null) {
+        ListNode result = null;
 
+        while (head != null) {
+            //当前下一个元素
             ListNode next = head.next;
 
+            //1. head下一个元素应该指向的元素
             head.next = result;
 
+            //2. result移动到head
             result = head;
 
+            //3. head移动下一个
             head = next;
-
         }
-
         return result;
     }
 }
