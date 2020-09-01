@@ -1,5 +1,7 @@
 package com.zyh.company.kuaishou;
 
+import java.util.List;
+
 import com.zyh.code.support.ListNode;
 
 /**
@@ -42,11 +44,55 @@ public class SortLinkedList {
     }
 
     private static ListNode mergeTwoList(ListNode left, ListNode right) {
-        return null;
+        //if (left == null) {
+        //    return right;
+        //}
+        //if (right == null) {
+        //    return left;
+        //}
+
+        ListNode result = new ListNode();
+        ListNode leftTemp = left;
+        ListNode rightTemp = right;
+
+        while (leftTemp != null || rightTemp != null) {
+            //left 为null
+            if (leftTemp == null) {
+                result.next = rightTemp;
+                break;
+            }
+            //right 为null
+            if (rightTemp == null) {
+                result.next = leftTemp;
+                break;
+            }
+
+            //都不为null
+            if (leftTemp.value < rightTemp.value) {
+                result.next = leftTemp;
+                result = result.next;
+                leftTemp = leftTemp.next;
+            } else {
+                result.next = rightTemp;
+                result = result.next;
+                rightTemp = rightTemp.next;
+            }
+
+        }
+
+        return result.next;
     }
 
     private static ListNode findMiddle(ListNode node) {
-        return null;
+        //find middle 使用fast and slow
+        ListNode slow = node;
+        ListNode fast = node.next;
+
+        while (fast != null &&  fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
     }
 }
 
