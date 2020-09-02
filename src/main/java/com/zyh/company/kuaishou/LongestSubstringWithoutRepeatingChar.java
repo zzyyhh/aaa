@@ -58,7 +58,6 @@ public class LongestSubstringWithoutRepeatingChar {
         if (StringUtils.isEmpty(str)) {
             return 0;
         }
-
         int len = 0;
         Set<Character> set = new HashSet<>();
         for (int i = 0, j = 0; j < str.length(); j++) {
