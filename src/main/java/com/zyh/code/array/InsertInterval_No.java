@@ -1,8 +1,8 @@
 package com.zyh.code.array;
 
-import java.util.List;
-
 import com.google.common.collect.Lists;
+
+import java.util.List;
 
 /**
  * @author yinghui.zhang on 2020/8/7
@@ -61,9 +61,11 @@ public class InsertInterval_No {
 
     private static List<Interval> merge(List<Interval> list, Interval insert) {
         int i = 0;
+        //list中end < insert.start,移动到可重合
         while (i < list.size() && list.get(i).end < insert.start) {
             i++;
         }
+        //
         while (i < list.size() && list.get(i).start <= insert.end) {
             insert = new Interval(Math.min(list.get(i).start, insert.start), Math.max(list.get(i).end, insert.end));
             list.remove(i);

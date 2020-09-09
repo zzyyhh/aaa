@@ -13,12 +13,12 @@ public class MajorityElement {
 
     public static void main(String[] args) {
         int[] array = new int[]{3,3,3,5,3,3,9,2,2};
-        int one = findTheElemment(array);
+        int one = findTheElement(array);
         System.out.println(one);
 
     }
 
-    private static int findTheElemment(int[] array) {
+    private static int findTheElement(int[] array) {
         if (array == null || array.length == 0) {
             return -1;
         }

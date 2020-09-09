@@ -1,12 +1,10 @@
 package com.zyh.code.tree;
 
 import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
 import com.zyh.code.support.Support;
 import com.zyh.code.support.TreeNode;
 
 import java.util.List;
-import java.util.Map;
 import java.util.Queue;
 
 /**
@@ -36,7 +34,7 @@ public class LastLeftNode {
         if (treeNode == null) {
             return null;
         }
-        Map<Integer, List<Integer>> level2Nodes = Maps.newHashMap();
+//        Map<Integer, List<Integer>> level2Nodes = Maps.newHashMap();
         int level = 0;
         Queue<TreeNode> queue = Lists.newLinkedList();
         queue.add(treeNode);
@@ -61,7 +59,7 @@ public class LastLeftNode {
                 }
             }
 
-            level2Nodes.put(level, temp);
+//            level2Nodes.put(level, temp);
         }
 
 
