@@ -14,7 +14,6 @@ public class Reverse {
 
             int temp = x%10;
 
-
             //判断是否 大于 最大32位整数
             if (result>Integer.MAX_VALUE/10 || (result==Integer.MAX_VALUE/10 && temp>7)) {
                 return 0;
