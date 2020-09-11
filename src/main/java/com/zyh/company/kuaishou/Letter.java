@@ -54,4 +54,8 @@ public class Letter {
             sb.deleteCharAt(sb.length() - 1);
         }
     }
+
+    public static void main(String[] args) {
+        System.out.println(letterCombinations("23"));
+    }
 }

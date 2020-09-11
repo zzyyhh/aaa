@@ -9,7 +9,7 @@ import java.util.Map;
 public class CacheTest {
     public static void main(String[] args) {
 
-        LruCache<String, String> cache = new LruCache<>(10);
+        LruCache<String, String> cache = new LruCache<>(1);
         //test1
         cache.putKV("1", "aa");
         System.out.println(cache.getValue("1"));
@@ -38,11 +38,7 @@ public class CacheTest {
                 private static final long serialVersionUID = 8411542782009718268L;
                 @Override
                 protected boolean removeEldestEntry(Map.Entry<K,V> eldest) {
-                    if (cache.size() > size) {
-                        super.remove(eldest);
-                        return true;
-                    }
-                    return false;
+                    return cache.size() > size;
                 }
             };
         }
