@@ -78,6 +78,34 @@ public class LongestSubstringWithoutRepeatingChar {
         return len;
     }
 
+
+    private static int longestSubstringWithoutRepeatingChar2(String str) {
+        if (StringUtils.isEmpty(str)) {
+            return 0;
+        }
+        int maxLen = 0;
+        Set<Character> set = new HashSet<>();
+        for (int i = 0, j = 0; j < str.length();) {
+
+            //无重复,移动j,更新set和maxlen
+            if (!set.contains(str.charAt(j))) {
+                set.add(str.charAt(j));
+                maxLen = set.size() > maxLen ? set.size() : maxLen;
+                j++;
+            }
+            //重复,移动i
+            else {
+                set.remove(str.charAt(i));
+
+            }
+        }
+        return maxLen;
+       }
+
+
+
+
+
     public static void main(String[] args) {
         System.out.println(longestSubstringWithoutRepeatingChar1("aab"));
     }

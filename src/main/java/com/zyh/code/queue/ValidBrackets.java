@@ -10,7 +10,7 @@ import java.util.Map;
  */
 public class ValidBrackets {
     public static void main(String[] args) {
-        System.out.println(isValid("([)]"));
+        System.out.println(isValid("()"));
         System.out.println(isValid(""));
     }
     public static boolean isValid(String s) {
@@ -31,6 +31,34 @@ public class ValidBrackets {
                 stack.pop();
             } else {
                 stack.push(character);
+            }
+        }
+        return stack.isEmpty();
+    }
+
+
+
+
+
+    public static boolean isValid2(String s) {
+        char[] chars = s.toCharArray();
+        Map<Character, Character> result = new HashMap<>();
+        result.put(')','(');
+        result.put( ']', '[');
+        result.put( '}', '{');
+
+        Deque<Character> stack = new LinkedList<>();
+        for (int i = 0; i < chars.length; i++) {
+            //if match then pop
+            if (result.containsKey(chars[i])) {
+                if (stack.isEmpty() || stack.peek() != result.get(chars[i])) {
+                    return false;
+                }
+                stack.pop();
+            }
+            //else push
+            else {
+                stack.push(chars[i]);
             }
         }
         return stack.isEmpty();
