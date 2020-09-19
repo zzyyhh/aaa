@@ -16,15 +16,25 @@ public class NumberOfOneBits {
 
     private static int num(int n) {
         int result = 0;
-        if (n == 0) {
-            return result;
-        }
         while (n != 0) {
-            result = (1 & (n)) + result;
-            n = n >>> 1;
+            result=+(1&n);
+            n=n>>>1;
         }
         return result;
     }
 
+
+//    private static int num(int n) {
+//        int result = 0;
+//        if (n == 0) {
+//            return result;
+//        }
+//        while (n != 0) {
+//            result = (1 & (n)) + result;
+//            n = n >>> 1;
+//        }
+//        return result;
+//    }
+//
 
 }

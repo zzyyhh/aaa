@@ -6,6 +6,26 @@ package com.zyh.code.binarysearch;
 public class Search {
 
 
+    public int search2(int[] nums, int start, int end, int target) {
+        //临界条件
+        if (start==end) {
+            if (nums[start] == target) {
+                return start;
+            } else {
+                return -1;
+            }
+        }
+        //递归
+        int middle = (end-start)/2 + start;
+        if (target>nums[middle]) {
+            return search2(nums, middle+1, end, target);
+        } else if (target==nums[middle]) {
+            return middle;
+        } else {
+            return search2(nums, start, middle-1, target);
+        }
+
+    }
     public int search(int[] nums, int target) {
         if (nums == null || nums.length == 0) {
             return -1;
@@ -17,12 +37,10 @@ public class Search {
             int middleIndex = (endIndex - startIndex) / 2 + startIndex;
             if (target > nums[middleIndex]) {
                 startIndex = middleIndex + 1;
-                continue;
             } else if (target == nums[middleIndex]) {
                 return middleIndex;
             } else {
                 endIndex = middleIndex - 1;
-                continue;
             }
         }
         return -1;
